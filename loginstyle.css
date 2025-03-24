@@ -19,6 +19,7 @@
     border: 3px #4b4453 solid;
     margin-top: 12px;
     margin-left: 60px;
+    opacity: 0.3;
 }
 .hidden {
     display: none !important;
@@ -112,7 +113,7 @@ section h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px auto;
+    margin: 20px auto;
     font-size: 18px;
     color: #c34a36;
     border: 3px #c34a36 solid;

@@ -1,108 +1,167 @@
-const continueSection = document.getElementById("continue")
-const loginSection = document.getElementById("login")
-const backButton = document.getElementById("backButton")
-const emailBtn = document.getElementById("email-link")  //Continue With email in Continue Section
-const signUpBtn = document.getElementById("SignUp")  // Sign Up button in log In Section
-const signupSection = document.getElementById("signup")
-const emailInput = document.getElementById("emailInput")  //Enter Email Field in Log In Section
-const firstName = document.getElementById("firstname")  
-const forgetButton = document.getElementById("forgetButton")  //forget password button in login section
-const forgetPassSection = document.getElementById("forgetPass")
-const continueButton1 = document.getElementById("continueButton-1")  //continue button in forget password section for entering email
-const continueButton2 = document.getElementById("continueButton-2")  //continue button in forget password section for verification code
-const forget1 = document.getElementById("forget-1")  //sub section in forget password section asking to enter email
-const forget2 = document.getElementById("forget-2")  //sub section in forget password section askinf for verification code
-const changePassSection = document.getElementById("changePass")
-const continueButton3 = document.getElementById("continueButton-3")
-const passChangedSection = document.getElementById("passChanged")
-const okayButton = document.getElementById("okayButton")
-const inputEmail = document.getElementById("inputEmail")  // Enter Email field  in Forget Password Section
-const veriCode = document.getElementById("veri-code")  // verfication feild in forget password section
-const newPassword = document.getElementById("newPassword")
-let hiddenClass = "hidden"
-let backgroundClass = "background"
+//-------Section Refrences--------//
+const continueSection = document.getElementById("continue");
+const loginSection = document.getElementById("login");
+const signupSection = document.getElementById("signup");
+const forgetPassSection = document.getElementById("forgetPass");
+const changePassSection = document.getElementById("changePass");
+const passChangedSection = document.getElementById("passChanged");
+//-------Section Refrences--------//
+
+//---------Back Button Refrence----------//
+const backButton = document.getElementById("backButton");
+//---------Back Button Refrence----------//
+
+//----------Continue Section Elements---------//
+const emailBtn = document.getElementById("email-link");
+//----------Continue Section Elements---------//
+
+//-----------Login Section Elements------------//
+const emailInput = document.getElementById("emailInput");
+const signUpBtn = document.getElementById("SignUp");
+const forgetButton = document.getElementById("forgetButton");
+//-----------Login Section Elements------------//
+
+//-------------Sign Up Section Elements-------------//
+const signUpButton = document.getElementById("signUpButton");
+const firstName = document.getElementById("firstname");
+//-------------Sign Up Section Elements-------------//
+
+//---------------Forget Password Section Elements--------------//
+const forget1 = document.getElementById("forget-1"); //Sub Section takes email Input
+const forget2 = document.getElementById("forget-2"); //Sub Section takes verification code input also used to Verify email while sign up Process
+const continueButton1 = document.getElementById("continueButton-1"); //continue button for email input
+const continueButton2 = document.getElementById("continueButton-2"); //continue button for verification code Input
+const inputEmail = document.getElementById("inputEmail");
+const veriCode = document.getElementById("veri-code");
+//---------------Forget Password Section Elements--------------//
+
+//-----------Change Password Section Elements------------//
+const continueButton3 = document.getElementById("continueButton-3");
+const newPassword = document.getElementById("newPassword");
+//-----------Change Password Section Elements------------//
+
+//--------------Password Changed Section Elements--------------//
+const okayButton = document.getElementById("okayButton");
+//--------------Password Changed Section Elements--------------//
+
+//--------Local Variables-----------//
+const hiddenClass = "hidden";
+const backgroundClass = "background";
+let wasInSignUpSec = false;
+//--------Local Variables-----------//
 
 function hide(elem) {
-    elem.classList.remove(backgroundClass)
-    elem.classList.add(hiddenClass)
+	elem.classList.remove(backgroundClass);
+	elem.classList.add(hiddenClass);
 }
 
 function show(elem) {
-    elem.classList.remove(hiddenClass)
-    elem.classList.add(backgroundClass)
+	elem.classList.remove(hiddenClass);
+	elem.classList.add(backgroundClass);
+}
+
+function backButtonOff() {
+	backButton.classList.add("hid");
+	backButton.classList.remove("vis");
+}
+
+function backButtonOn() {
+	backButton.classList.add("vis");
+	backButton.classList.remove("hid");
 }
 
 window.onload = () => {
-    emailBtn.onclick = function(e) {
-        e.preventDefault()
-        show(loginSection)
-        emailInput.focus()
-        continueSection.classList.add(hiddenClass)
-        backButton.classList.add("vis")
-        backButton.classList.remove("hid")
-    }
-    signUpBtn.onclick = function() {
-        show(signupSection)
-        firstName.focus()
-        loginSection.classList.add(hiddenClass)
-    }
-    backButton.onclick = function() {
-        if (loginSection.classList.contains(backgroundClass)) { // Check for Login Section
-            show(continueSection)
-            backButton.classList.add("hid")
-            backButton.classList.remove("vis")
-            hide(loginSection)
-        }
-        else if (signupSection.classList.contains(backgroundClass)) {
-            show(loginSection)
-            hide(signupSection)
-        }
-        else if (forgetPassSection.classList.contains(backgroundClass)) {
-            if (forget1.classList.contains(hiddenClass)) {
-                forget2.classList.add(hiddenClass)
-                forget1.classList.remove(hiddenClass)
-            }
-            else {
-                show(loginSection)
-                hide(forgetPassSection)
-                forget1.classList.remove(hiddenClass)
-                forget2.classList.add(hiddenClass)
-            }
-        }
-        else if (changePassSection.classList.contains(backgroundClass)) {
-            show(forgetPassSection)
-            hide(changePassSection)
-        }
-        else if (passChangedSection.classList.contains(backgroundClass)) {
-            show(changePassSection)
-            hide(passChangedSection)
-        }
-    }
-    forgetButton.onclick = function() {
-        hide(loginSection)
-        show(forgetPassSection)
-        inputEmail.focus()
-        continueButton1.onclick = function () {
-            forget1.classList.add(hiddenClass)
-            forget2.classList.remove(hiddenClass)
-            veriCode.focus()
-        }
-        continueButton2.onclick = function() {
-            hide(forgetPassSection)
-            show(changePassSection)
-            newPassword.focus()
-            forget1.classList.remove(hiddenClass)
-            forget2.classList.add(hiddenClass)
-        }
-        continueButton3.onclick = function() {
-            hide(changePassSection)
-            show(passChangedSection)
-        }
-        okayButton.onclick = function() {
-            hide(passChangedSection)
-            show(continueSection)
-            backButton.classList.add("hid")
-            backButton.classList.remove("vis")
-        }
-    }
-}
+	emailBtn.onclick = function (e) {
+		e.preventDefault();
+		show(loginSection);
+		emailInput.focus();
+		hide(continueSection);
+		backButtonOn();
+	};
+	signUpBtn.onclick = function () {
+		show(signupSection);
+		firstName.focus();
+		hide(loginSection);
+	};
+	backButton.onclick = function () {
+		if (loginSection.classList.contains(backgroundClass)) {
+			// Check for Login Section
+			show(continueSection);
+			backButtonOff();
+			hide(loginSection);
+		} else if (signupSection.classList.contains(backgroundClass)) {
+			show(loginSection);
+			hide(signupSection);
+		} else if (forgetPassSection.classList.contains(backgroundClass)) {
+			if (wasInSignUpSec) {
+				show(signupSection);
+				hide(forgetPassSection);
+				document.getElementById("veri-head").textContent =
+					"Don't worry! We have your back.";
+				forget1.classList.remove(hiddenClass);
+				forget2.classList.add(hiddenClass);
+				wasInSignUpSec = false;
+			} else if (forget1.classList.contains(hiddenClass)) {
+				forget2.classList.add(hiddenClass);
+				forget1.classList.remove(hiddenClass);
+			} else {
+				show(loginSection);
+				hide(forgetPassSection);
+				forget1.classList.remove(hiddenClass);
+				forget2.classList.add(hiddenClass);
+			}
+		} else if (changePassSection.classList.contains(backgroundClass)) {
+			show(forgetPassSection);
+			hide(changePassSection);
+		} else if (passChangedSection.classList.contains(backgroundClass)) {
+			show(changePassSection);
+			hide(passChangedSection);
+		}
+	};
+	forgetButton.onclick = function () {
+		hide(loginSection);
+		show(forgetPassSection);
+		inputEmail.focus();
+		continueButton1.onclick = function () {
+			forget1.classList.add(hiddenClass);
+			forget2.classList.remove(hiddenClass);
+			veriCode.focus();
+		};
+		continueButton2.onclick = function () {
+			hide(forgetPassSection);
+			show(changePassSection);
+			newPassword.focus();
+			forget1.classList.remove(hiddenClass);
+			forget2.classList.add(hiddenClass);
+		};
+		continueButton3.onclick = function () {
+			hide(changePassSection);
+			show(passChangedSection);
+		};
+		okayButton.onclick = function () {
+			hide(passChangedSection);
+			show(continueSection);
+			backButton.classList.add("hid");
+			backButton.classList.remove("vis");
+		};
+	};
+	signUpButton.onclick = function () {
+		hide(signupSection);
+		show(forgetPassSection);
+		document.getElementById("veri-head").textContent = "Verify Your Email.";
+		forget1.classList.add(hiddenClass);
+		forget2.classList.remove(hiddenClass);
+		veriCode.focus();
+		wasInSignUpSec = true;
+		continueButton2.onclick = function () {
+			forget1.classList.remove(hiddenClass);
+			forget2.classList.add(hiddenClass);
+			hide(forgetPassSection);
+			show(continueSection);
+			backButtonOff();
+			document.getElementById("veri-head").textContent =
+				"Don't worry! We have your back.";
+			wasInSignUpSec = false;
+		};
+	};
+};
