@@ -1,0 +1,320 @@
+* {
+    caret-color: #c34a36;
+}
+.vis {
+    height: 80px;
+    background-color: #c34a36;
+    border-radius: 42px;
+    border: 3px #c34a36 solid;
+    margin-top: 12px;
+    margin-left: 60px;
+}
+.vis:hover {
+    background-color: #ff8066;
+}
+.hid {
+    height: 80px;
+    background-color: #b0a8b9;
+    border-radius: 42px;
+    border: 3px #4b4453 solid;
+    margin-top: 12px;
+    margin-left: 60px;
+}
+.hidden {
+    display: none !important;
+}
+.background {
+    background-image: url("resources/sec-background.jpg");
+    background-size: 725px 550px;
+    margin: 0px auto;
+    margin-bottom: 100px;
+    border: 6px #c34a36 solid;
+    border-radius: 40px;
+    width: 725px;
+    height: 550px;
+}
+.content {
+    font-family: "Open Sans", sans-serif;
+    display: block;
+    background-color: rgba(255, 255, 255,0.8);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 30px;
+    border: 4px white solid;
+
+}
+section h3 {
+    text-align: left;
+    margin: 20px 20px;
+    padding-left: 10px;
+    padding-bottom: 15px;
+    font-size: 30px;
+    color: #845ec2;
+    border-bottom: 2px #4b4453 solid;
+    font-weight: 600;
+}
+.inputIcon {
+    height: 40px;
+    background-color: rgba(216, 207, 227, 0.8);
+    border-top-left-radius: 23px;
+    border-bottom-left-radius: 23px;
+}
+.log:focus-visible {
+    outline: none;
+}
+#email:focus-within, #password:focus-within, #forgetOne:focus-within {
+    border-color: #ff8066;
+    border-radius: 35px;
+}
+#email, #password {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 38px auto;
+    width: 350px;
+    border: 3px #c34a36 solid;
+    border-radius: 30px;
+}
+.log {
+    height: 40px;
+    width: 300px;
+    background-color: rgba(216, 207, 227, 0.8);
+    border: none;
+    border-top-right-radius: 23px;
+    border-bottom-right-radius: 23px;
+    padding-left: 10px;
+    font-size: 18px;
+    color: #4b4453;
+}
+.button {
+    font-family: "Open Sans";
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+.buttonStyle {
+    background-color: #b0a8b9;
+    width: 150px;
+    height: 50px;
+    border-radius: 22px;
+    border: 3px #c34a36 solid;
+    font-weight: bold;
+    color: #c34a36;
+    font-size: 18px;
+}
+.buttonStyle:hover, .signup:hover {
+    border-color: white;
+    color: white;
+    font-size: 20px;
+}
+#forgetButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    font-size: 18px;
+    color: #c34a36;
+    border: 3px #c34a36 solid;
+    border-radius: 22px;
+    font-weight: bold;
+    width: 200px;
+    height: 50px;
+    background-color: #b0a8b9;
+}
+#forgetButton:hover {
+    font-size: 20px;
+    color: white;
+    border-color: white;
+}
+#continue img {
+    height: 50px;
+}
+#continue div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+    width: 500px;
+    height: 60px;
+    border: 3px #c34a36 solid;
+    background-color: #b0a8b9;
+    border-radius: 20px;
+    color: #c34a36;
+    font-size: 18px;
+    font-weight: 600;
+}
+#continue p {
+    padding-left: 30px;
+}
+#continue div:hover {
+    color: white;
+    border-color: white;
+    font-size: 20px;
+}
+#names {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #4b4453;
+    font-weight: 600;
+    margin: 20px auto;
+    margin-top: 60px;
+    gap: 15px;
+
+}
+#names input {
+    margin-left: 10px;
+    padding-inline: 10px;
+    height: 30px;
+    border: 3px #c34a36 solid;
+    border-radius: 15px;
+    background-color: rgba(216, 207, 227, 0.8);
+    color: #4b4453;
+    font-size: 14px;
+}
+#extras {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 14px;
+    color: #4b4453;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#extrasPhone {
+    padding-left: 35px;
+}
+#extrasEmail {
+    padding-left: 40px;
+}
+#extras input {
+    padding-inline: 10px;
+    height: 30px;
+    border: 3px #c34a36 solid;
+    border-radius: 15px;
+    background-color: rgba(216, 207, 227, 0.8);
+    color: #4b4453;
+    font-size: 14px;
+    margin-left: 10px;
+}
+#gender {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #4b4453;
+    font-weight: 600;
+    gap: 20px;
+    margin: 25px auto;
+}
+#pass {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #4b4453;
+    font-weight: 600;
+}
+#pass div {
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 90px;
+    width: 500px;
+}
+#pass input {
+    padding-inline: 10px;
+    height: 30px;
+    border: 3px #c34a36 solid;
+    border-radius: 15px;
+    background-color: rgba(216, 207, 227, 0.8);
+    color: #4b4453;
+    font-size: 14px;
+    width: 330px;
+}
+#pass #newpass{
+    margin-left: 63px;
+}
+#pass #cnfpass {
+    margin-left: 6px;
+}
+#signup .button {
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.inputBox:focus-visible {
+    outline: none !important;
+    border-color: #ff8066 !important;
+}
+#forgetOne {
+    display: flex;
+    margin: 143px auto;
+    width: 350px;
+    border: 3px #c34a36 solid;
+    border-radius: 30px;
+}
+#forget-2 {
+    margin: 0px auto;
+    width: 550px;
+}
+#forget-2 p {
+    font-size: 25px;
+    color: #4b4453;
+    margin: 35px auto;
+}
+#forget-2 #veri-code {
+    padding-inline: 10px;
+    height: 50px;
+    border: 3px #c34a36 solid;
+    border-radius: 28px;
+    background-color: rgba(216, 207, 227, 0.8);
+    color: #4b4453;
+    font-size: 20px;
+    width: 400px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+#newPassword {
+    padding-inline: 30px;
+    height: 50px;
+    border: 3px #c34a36 solid;
+    border-radius: 28px;
+    background-color: rgba(216, 207, 227, 0.8);
+    color: #4b4453;
+    font-size: 20px;
+    width: 400px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+#confirmPassword {
+    padding-inline: 30px;
+    height: 50px;
+    border: 3px #c34a36 solid;
+    border-radius: 28px;
+    background-color: rgba(216, 207, 227, 0.8);
+    color: #4b4453;
+    font-size: 20px;
+    width: 400px;
+    margin: 40px auto
+}
+#continueButton-3 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+#message-1 {
+    width: 500px;
+    margin: 40px auto;
+    font-size: 20px;
+    color: #4b4453;
+}
+#message-2 {
+    width: 500px;
+    margin: 45px auto;
+    font-size: 20px;
+    color: #4b4453;
+    text-align: left;
+}

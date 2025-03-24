@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <title>Welcome to RIVA</title>
+    <meta charset="utf-8">
+    <link href="head-foot.css" rel="stylesheet">
+    <link href="loginstyle.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <body>
+        <header>
+            <img src="resources/logo.png" />
+            <h1><span class="alpha">R</span>iva <span class="alpha">F</span>ood <span class="alpha">P</span>laza</h1>
+        </header>
+        <nav>
+            <a href="index.html"><h5 class = "nst">Home</h5></a>
+            <a href="order.html"><h5 class = "nst">Orders</h5></a>
+            <h5 id = "st">Log In / Sign Up</h5>
+            <a href="dinein.html"><h5 class = "nst">Dine In</h5></a>
+        </nav>
+        <main>
+            <img src="resources/backIcon.png" class="hid" id="backButton" />
+            <!-- Continue Section Starts -->
+            <section class="background" id="continue">
+                <section class="content">
+                    <a href="#"   id="google-link"><div>
+                        <img src="resources/google.png" />
+                        <p>Continue With Google.</p>
+                    </div></a>
+                    <a href="#" id="facebook-link"><div>
+                        <img src="resources/facebook.png" />
+                        <p>Continue With Facebook.</p>
+                    </div></a>
+                    <a href="#" id="twitter-link"><div>
+                        <img src="resources/twitter.png" />
+                        <p>Continue With Twitter.</p>
+                    </div></a>
+                    <a href="#" id="email-link"><div>
+                        <img src="resources/email2.png" />
+                        <p>Continue With Email.</p>
+                    </div></a>
+                </section>
+            </section>
+            <!-- Login Section Starts -->
+            <section class="hidden" id="login">
+                <section class="content">
+                    <h3>Welcome! Please provide following details.</h3>
+                    <div id = "email">
+                        <img src="resources/Email.png" class="inputIcon" alt="Enter Email or Phone"/>
+                        <input type = "text" placeholder="Enter Email Or Phone" class="log" id="emailInput" maxlength="25">
+                    </div>
+                    <div id = "password">
+                        <img src="resources/Password.png" class="inputIcon" alt="Enter Password"/>
+                        <input type="password" placeholder="Enter Password" class="log" required maxlength="15">
+                    </div>
+                    <div class="button">
+                        <input type="button" value="Log In" class="buttonStyle" id="LogIn">
+                        <input type="button" value="Sign Up" class="buttonStyle" id="SignUp">
+                    </div>
+                    <div>
+                        <input type="button" value="Forget Password" id="forgetButton">
+                    </div>
+                </section>
+            </section>
+            <!-- Sign Up Section Starts-->
+            <section class="hidden" id="signup">
+                <section class="content">
+                    <h3>Register.</h3>
+                    <div id="names">
+                        <div>
+                            <label for="firstname">First Name :</label>
+                            <input type="text" id="firstname" class="inputBox" required maxlength="25">
+                        </div>
+                        <div>
+                            <label for="lastname">Last Name :</label>
+                            <input type="text" id="lastname" class="inputBox" required maxlength="25">
+                        </div>
+                    </div>
+                    <div id="extras">
+                        <div id="extrasPhone">
+                            <label for="phone">Phone :</label>
+                            <input type="text" id="phone" class="inputBox" required maxlength="15">
+                        </div>
+                        <div id="extrasEmail">
+                            <label for="username">Email :</label>
+                            <input type="email" required id="username" class="inputBox" maxlength="25">
+                        </div>
+                    </div>
+                    <div id="gender">
+                            <label>Gender :</label>
+                            <input type="radio" id="male" value="male" name="gender">
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" value="female" name="gender">
+                            <label for="female">Female</label>
+                            <input type="radio" id="other" value="other" name="gender">
+                            <label for="other">Other</label>
+                    </div>
+                    <div id="pass">
+                        <div>
+                            <label for="newpass">Password :</label>
+                            <input type="password" id="newpass" class="inputBox" required maxlength="15">
+                        </div>
+                        <div>
+                            <label for="cnfpass">Confirm Password :</label>
+                            <input type="password" id="cnfpass" class="inputBox" required maxlength="15">
+                        </div>
+                    </div>
+                    <div class="button">
+                        <input type="button" value="Sign Up" class="buttonStyle">
+                    </div>
+                </section>
+            </section>
+            <!-- Forget Password Section Start -->
+            <section class="hidden" id="forgetPass">
+                <section class="content">
+                    <h3>Don't worry! We have your back.</h3>
+                    <div id="forget-1">
+                        <div id="forgetOne">
+                            <img src="resources/Email.png" alt="Enter Email" class="inputIcon" />
+                            <input type="email" placeholder="Please Enter Your Email Here" id="inputEmail" class="log" maxlength="25">
+                        </div>
+                        <input type="button" class="buttonStyle" id="continueButton-1" value="Continue">
+                    </div>
+                    <div id="forget-2" class="hidden">
+                        <p>We have sent a verification code to your email address to confirm your identity and ensure that you are the rightful owner of this account. Please check your inbox and enter the code to complete the verification process.</p>
+                        <input type="text" placeholder="Enter Verification Code" id="veri-code" class="inputBox">
+                        <input type="button" class="buttonStyle" id="continueButton-2" value="Continue">
+                    </div>
+                </section>
+            </section>
+            <!-- Change Password Section Starts -->
+            <section class="hidden" id="changePass">
+                <section class="content">
+                    <h3>Time for a Password Makeover!</h3>
+                    <input type="password" placeholder="Please Enter New Password" id="newPassword" class="inputBox">
+                    <input type="password" placeholder="Confirm New Password" id="confirmPassword" class="inputBox">
+                    <div>
+                        <input type="button" class="buttonStyle" value="Continue" id="continueButton-3">
+                    </div>
+                </section>
+            </section>
+            <!-- Password Changed Section Starts -->
+            <section class="hidden" id="passChanged">
+                <section class="content">
+                    <h3>Success! Your Password Has Been Updated Securely.</h3>
+                    <div id="message-1">
+                        <p>Thank you for choosing Riva Food Plaza! We’re delighted to have served you and hope you enjoyed your meal. Your support means the world to us, and we can’t wait to welcome you back for another delicious experience!</p>
+                    </div>
+                    <div id="message-2">
+                        <p>&#9135;&#9135;  Stay happy, stay hungry!</p>
+                    </div>
+                    <div>
+                        <input type="button" class="buttonStyle" value="Okay" id="okayButton">
+                    </div>
+                </section>
+            </section>
+        </main>
+        <footer>
+            <p>Email: rivafoods@gmail.com  |  Phone: +01-1800-199-1524  |  Instagram: @rivafoodplaza</p>
+        </footer>
+        <script src="login.js"></script>
+    </body>
+</html>
